@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 
 export default function MusicButton() {
-  const [playing, setPlaying] = useState(true);
+  const [playing, setPlaying] = useState(false);
   const iframeRef = useRef<HTMLIFrameElement>(null);
 
   function toggle() {

@@ -48,14 +48,27 @@ function useTimer() {
     return () => clearInterval(id);
   }, []);
 
-  const totalSec = Math.floor(diff / 1000);
-  const dias = Math.floor(totalSec / 86400);
+const totalSec = Math.floor(diff / 1000);
   const horas = Math.floor((totalSec % 86400) / 3600);
   const minutos = Math.floor((totalSec % 3600) / 60);
   const segundos = totalSec % 60;
-  const anos = Math.floor(dias / 365);
-  const meses = Math.floor((dias % 365) / 30);
-  const diasRestantes = dias % 30;
+
+  const agora = new Date(Date.now());
+const inicio = INICIO;
+
+let anos = agora.getFullYear() - inicio.getFullYear();
+let meses = agora.getMonth() - inicio.getMonth();
+let diasRestantes = agora.getDate() - inicio.getDate();
+
+if (diasRestantes < 0) {
+  meses -= 1;
+  const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
+  diasRestantes += ultimoMes.getDate();
+}
+if (meses < 0) {
+  anos -= 1;
+  meses += 12;
+}
 
   return { anos, meses, diasRestantes, horas, minutos, segundos };
 }

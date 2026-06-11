@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 
-const DIAS = "1 ano e 9 meses";
+const DIAS = "1 ano e 7 meses";
 
 const FOTOS = [
   { src: "./imgCarrousel1.jpg", legenda: "Piquenique", motivo: "E esse foi o dia em que passei uma tarde de piquenique ao seu lado. Eu amo essa foto, porque ela transmite uma sensação de leveza e paz tão sincera que, toda vez que olho para ela, sinto vontade de voltar no tempo e viver esse dia mais uma vez com você.❤️" },
