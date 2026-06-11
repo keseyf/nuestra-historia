@@ -167,15 +167,6 @@ function PlayerStage({ onNext }: { onNext?: () => void }) {
     }, 380);
   }
 
-  useEffect(() => {
-    ScrollReveal().reveal("#muscDiv", {
-      duration: 1000,
-      distance: "60px",
-      origin: "bottom",
-      delay: 100
-    })
-  })
-
   function prev() { goToTrack((atual - 1 + MUSICAS.length) % MUSICAS.length); }
   function next() { goToTrack((atual + 1) % MUSICAS.length); }
 

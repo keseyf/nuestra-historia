@@ -1,5 +1,4 @@
-import { useState, useEffect, useRef } from "react";
-import ScrollReveal from "scrollreveal";
+import { useState, useRef } from "react";
 
 const DIAS = "1 ano e 9 meses";
 

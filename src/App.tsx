@@ -17,21 +17,6 @@ type Section =
 
 type LockStage = "heart" | "locked" | "modal" | "unlocking" | "unlocked";
 
-const SECTIONS: Section[] = ["lock", "photos", "music", "poems", "more", "conclusion"];
-
-function SectionPlaceholder({ name }: { name: string }) {
-  return (
-    <div
-      className="flex flex-col items-center justify-center min-h-screen gap-4 text-center px-6"
-      style={{ background: "#0a0a0f" }}
-    >
-      <span className="text-6xl">🚧</span>
-      <h2 className="text-2xl font-bold text-purple-400">{name}</h2>
-      <p className="text-gray-600 text-sm">em construção...</p>
-    </div>
-  );
-}
-
 // ── Tela de cadeado ────────────────────────────────────────────────────────────
 function LockSection({ onUnlocked }: { onUnlocked: () => void }) {
   const [lockStage, setLockStage] = useState<LockStage>("heart");
