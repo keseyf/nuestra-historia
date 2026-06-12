@@ -77,7 +77,7 @@ function LockSection({ onUnlocked }: { onUnlocked: () => void }) {
               >
                 Para minha amada 💜
               </p>
-              <p className="text-xs mt-2 text-purple-300/15">
+              <p style={{ animation: "fadeUp 0.6s ease 0.4s both" }} className="text-xs mt-2 text-purple-300/15">
                 Aperte o play no botão inferior para uma melhor experiência.
               </p>
             </div>

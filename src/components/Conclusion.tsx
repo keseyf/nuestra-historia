@@ -53,22 +53,9 @@ const totalSec = Math.floor(diff / 1000);
   const minutos = Math.floor((totalSec % 3600) / 60);
   const segundos = totalSec % 60;
 
-  const agora = new Date(Date.now());
-const inicio = INICIO;
-
-let anos = agora.getFullYear() - inicio.getFullYear();
-let meses = agora.getMonth() - inicio.getMonth();
-let diasRestantes = agora.getDate() - inicio.getDate();
-
-if (diasRestantes < 0) {
-  meses -= 1;
-  const ultimoMes = new Date(agora.getFullYear(), agora.getMonth(), 0);
-  diasRestantes += ultimoMes.getDate();
-}
-if (meses < 0) {
-  anos -= 1;
-  meses += 12;
-}
+let anos = 1
+let meses = 7
+let diasRestantes = 19
 
   return { anos, meses, diasRestantes, horas, minutos, segundos };
 }
@@ -97,7 +84,7 @@ function PhraseStage({ onReveal }: { onReveal: () => void }) {
   const dotAtivo = finished ? totalDots - 1 : fraseAtual;
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-screen gap-10 px-6 relative z-10">
+    <div style={{ animation: "fadeUp 0.6s ease 0.4s both" }} className="flex flex-col items-center justify-center w-full min-h-screen gap-10 px-6 relative z-10">
       <p className="text-xs font-semibold tracking-[0.2em] uppercase text-purple-400" style={{ animation: "fadeUp 0.6s ease 0.3s both" }}>
         Para sempre 💜
       </p>
